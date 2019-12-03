@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+  <arg name="text_array" default="[a,b,c]"/>
+  <node pkg="rosparam_ex" name="rosparam_ex" type="rosparam_ex">
+    <!-- NOTE: first declaration has high priority -->
+    <!-- <param name="number" value="1"/> -->
+    <!-- <param name="text" value="abc"/> -->
+    <!-- <param name="number_array" value="[1, 2, 3]"/> -->
+    <!-- <param name="text_array" value="[a, b, c]"/> -->
+    <param name="obstacle_detection_frame_ids" value="$(arg text_array)"/>
+    <rosparam param="number">1</rosparam>
+    <rosparam param="text">abc</rosparam>
+    <rosparam param="number_array">[1,2,3]</rosparam>
+    <!-- <rosparam param="text_array">[a,b,c]</rosparam> -->
+    <!-- don't wrap "$(arg text_array)" by "" -->
+    <rosparam param="text_array" subst_value="true">$(arg text_array)</rosparam>
+  </node>
+</launch>
