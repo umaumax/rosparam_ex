@@ -1,7 +1,7 @@
 # rosparam_ex
 
 ## how to setup
-```
+``` bash
 mkdir catkin_ws
 pushd catkin_ws
 mkdir src
@@ -13,14 +13,14 @@ popd
 ```
 
 ## how to run
-```
+``` bash
 roslaunch rosparam_ex rosparam_ex.launch --screen
 ```
 
 ### output
 
 `<rosparam>`
-```
+``` log
 [ INFO] [1575419614.748039932]: int <- number:OK
 [ERROR] [1575419614.748422724]: int <- text:NG
 [ERROR] [1575419614.748752193]: int <- number_array:NG
@@ -40,7 +40,7 @@ roslaunch rosparam_ex rosparam_ex.launch --screen
 ```
 
 `<param>`
-```
+``` log
 [ INFO] [1575419655.577463987]: int <- number:OK
 [ERROR] [1575419655.577889615]: int <- text:NG
 [ERROR] [1575419655.578222737]: int <- number_array:NG
