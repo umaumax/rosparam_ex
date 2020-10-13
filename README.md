@@ -100,7 +100,12 @@ std::vector<uint32_t> vec;
 ```
 
 [roscpp: ros::NodeHandle Class Reference]( https://docs.ros.org/api/roscpp/html/classros_1_1NodeHandle.html#afb8dbc451e3c0dbc14c67438d21c9f2b )
-によると，上記の他に`std::vector<bool>`もOKな模様(要:検証 0/1 or "true"/"false"?)
+によると，上記の他に`std::vector<bool>`もOK(要:検証 0/1 or "true"/"false"?)
+
+* bool
+  * true: "true", 1, 0以外の数値(e.g. -1, 123)
+  * false: "false", 上記以外(e.g. 0, "True", "TRUE")
+  * なお，`rosparam get`するときには，`rosparam set`したときの文字列がそのまま適用される
 
 さらに，`std::map`も対応している模様
 
